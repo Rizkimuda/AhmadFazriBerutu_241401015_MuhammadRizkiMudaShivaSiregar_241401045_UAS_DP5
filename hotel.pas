@@ -4,14 +4,14 @@ uses crt;
 
 
 type
-    Kamar = record
+    Kamar=record
         jenis:string;
         harga:longint;
         tersedia:integer; 
         totalKamar:integer;
   end;
 
-pelanggan1 = record
+pelanggan1=record
     nama:string;
     jenisKamar:string;
     durasi:integer;
@@ -56,7 +56,7 @@ procedure tampilkamar;
         for i:=1 to 5 do
             begin
                 writeln(
-                    i, '. ', daftarkamar[i].jenis, ' - Rp.', daftarkamar[i].harga, ' - Tersedia: ', daftarkamar[i].tersedia, ' kamar'
+                    i, '. ',daftarkamar[i].jenis, ' - Rp.',daftarkamar[i].harga,' - Tersedia: ',daftarkamar[i].tersedia,' kamar'
                     );
             end;
     end;
@@ -85,11 +85,11 @@ begin
     writeln('Masukkan Nama Anda: '); readln(datapelanggan[totalguest+1].nama);
     writeln('Pilih Nomor Kamar (1-5):'); readln(pilihan);
 
-    if (pilihan >= 1) and (pilihan <= 5) then
+    if (pilihan>=1) and (pilihan<=5) then
         begin
-            if daftarkamar[pilihan].tersedia > 0 then
+            if daftarkamar[pilihan].tersedia>0 then
             begin
-            writeln('Masukkan Lama Menginap (hari): '); readln(durasi);
+            writeln('Masukkan Lama Menginap (hari):'); readln(durasi);
             datapelanggan[totalguest+1].jenisKamar:=daftarkamar[pilihan].jenis;
             datapelanggan[totalguest+1].durasi:=durasi;
             datapelanggan[totalguest+1].total_bayar:=hitungtotal(daftarkamar[pilihan].harga,durasi);
